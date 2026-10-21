@@ -228,6 +228,13 @@
       #req-done p { margin: 0 0 0.9rem; color: var(--ink); }
       #req-done .msg { white-space: pre-wrap; font-size: 0.95rem; color: var(--ink-dim); background: var(--bg); border: 1px solid var(--line-soft); border-radius: 3px; padding: 0.9rem 1rem; margin-bottom: 1rem; }
 
+      /* edit requests */
+      #edit-done { display: none; border: 1px solid var(--line); background: var(--surface-2); border-radius: 4px; padding: 1.2rem 1.3rem; }
+      #edit-done p { margin: 0 0 0.9rem; color: var(--ink); }
+      #edit-done .msg { white-space: pre-wrap; font-size: 0.95rem; color: var(--ink-dim); background: var(--bg); border: 1px solid var(--line-soft); border-radius: 3px; padding: 0.9rem 1rem; margin-bottom: 1rem; }
+      .edit-note { margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line-soft); font-size: 0.95rem; color: var(--ink-dim); }
+      .edit-note a { color: var(--brass-bright); }
+
       /* footer */
       footer { background: var(--bg-deep); border-top: 1px solid var(--line-soft); padding: 3.5rem 0 2.2rem; }
       .foot-grid { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: space-between; }
@@ -271,6 +278,7 @@
           <a href="#about">About</a>
           <a href="#area">Service Area</a>
           <a href="#faq">FAQ</a>
+          <a href="#edits">Request an Edit</a>
         </nav>
         <a class="btn btn-gold header-call" href="tel:+13373499776">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
@@ -603,6 +611,70 @@
           </div>
         </div>
       </section>
+
+      <!-- WEBSITE EDIT REQUESTS (owner's edit desk) -->
+      <section id="edits" class="band">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="rule-label">Website Care</p>
+            <h2>Request a <span class="accent">Website Edit</span></h2>
+            <p>This is Jordan&rsquo;s edit desk for this website. Fill out the form below and it goes by email to your website manager — the change gets made for you and the updated site goes live. No code to touch, nothing to log into.</p>
+          </div>
+          <div class="book reveal">
+            <form class="req" id="edit-form">
+              <div class="form-row">
+                <div class="field">
+                  <label for="e-name">Your name</label>
+                  <input id="e-name" name="name" type="text" autocomplete="name" placeholder="e.g. Jordan McGee" />
+                </div>
+                <div class="field">
+                  <label for="e-part">What part of the site?</label>
+                  <select id="e-part" name="part">
+                    <option value="">Choose a part…</option>
+                    <option>Homepage top section</option>
+                    <option>Services</option>
+                    <option>Prices</option>
+                    <option>Photos</option>
+                    <option>Service area / towns</option>
+                    <option>Phone or contact info</option>
+                    <option>Hours / availability</option>
+                    <option>Facebook link</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="e-change">What do you want changed?</label>
+                <textarea id="e-change" name="change" rows="3" placeholder="e.g. Add a price list under Services, or swap the top photo for a newer one."></textarea>
+              </div>
+              <div class="field">
+                <label for="e-details">New wording or details <span style="text-transform:none; letter-spacing:0; font-weight:500;">(the exact new text, price, etc. — optional)</span></label>
+                <textarea id="e-details" name="details" rows="3" placeholder="e.g. Kitchen knives — $10 each. Serrated — $12 each."></textarea>
+              </div>
+              <div class="field">
+                <label for="e-urgency">How urgent?</label>
+                <select id="e-urgency" name="urgency">
+                  <option value="">Choose one…</option>
+                  <option>Whenever you get to it</option>
+                  <option>This week</option>
+                  <option>As soon as possible</option>
+                </select>
+              </div>
+              <button class="btn btn-gold" type="submit" style="justify-content:center;">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Prepare My Edit Request
+              </button>
+            </form>
+            <div id="edit-done" role="status" style="margin-top:1rem;">
+              <p><strong>Your edit request is ready to email.</strong> Here&rsquo;s exactly what will be sent:</p>
+              <div class="msg" id="edit-msg"></div>
+              <a class="btn btn-gold" id="edit-open" href="mailto:rjmcgee53192@gmail.com">Open in Email</a>
+              <button class="btn btn-ghost" id="edit-copy" type="button">Copy the Request</button>
+            </div>
+            <p class="edit-note">Prefer to just email? Send your changes to <a href="mailto:rjmcgee53192@gmail.com?subject=Website%20Edit%20Request%20%E2%80%94%20Cajun%20Knife%20Sharpening">rjmcgee53192@gmail.com</a> with the subject: <strong>Website Edit Request — Cajun Knife Sharpening</strong></p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -708,6 +780,57 @@
             ta.value = lastMsg; document.body.appendChild(ta);
             ta.select();
             try { document.execCommand("copy"); ok(); } catch (e) { copyBtn.textContent = "Copy not available — use Open in Messages"; }
+            document.body.removeChild(ta);
+          }
+        });
+
+        // Edit request form -> prefilled email to the website manager (Gmail)
+        var editForm = document.getElementById("edit-form");
+        var editDone = document.getElementById("edit-done");
+        var editMsgBox = document.getElementById("edit-msg");
+        var editOpenBtn = document.getElementById("edit-open");
+        var editCopyBtn = document.getElementById("edit-copy");
+        var lastEdit = "";
+
+        editForm.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          var eName = document.getElementById("e-name").value.trim();
+          var ePart = document.getElementById("e-part").value;
+          var eChange = document.getElementById("e-change").value.trim();
+          var eDetails = document.getElementById("e-details").value.trim();
+          var eUrgency = document.getElementById("e-urgency").value;
+          var lines = [
+            "Website Edit Request — Cajun Knife Sharpening",
+            "",
+            "Name: " + (eName || "(not given)"),
+            "Part of the site: " + (ePart || "(not chosen)"),
+            "Urgency: " + (eUrgency || "(not chosen)"),
+            "",
+            "What to change:",
+            eChange || "(not described)",
+            "",
+            "New wording or details:",
+            eDetails || "(none provided)"
+          ];
+          lastEdit = lines.join("\n");
+          editMsgBox.textContent = lastEdit;
+          editOpenBtn.href = "mailto:rjmcgee53192@gmail.com?subject=" +
+            encodeURIComponent("Website Edit Request — Cajun Knife Sharpening") +
+            "&body=" + encodeURIComponent(lastEdit);
+          editDone.style.display = "block";
+          editDone.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+
+        editCopyBtn.addEventListener("click", function () {
+          function ok() { editCopyBtn.textContent = "Copied — paste it into an email"; }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(lastEdit).then(ok, function () { editFallback(); });
+          } else { editFallback(); }
+          function editFallback() {
+            var ta = document.createElement("textarea");
+            ta.value = lastEdit; document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); ok(); } catch (e) { editCopyBtn.textContent = "Copy not available — use Open in Email"; }
             document.body.removeChild(ta);
           }
         });
